@@ -1,0 +1,9 @@
+{
+  "name": "goethe-b1-monitor-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobile-friendly Goethe B1 exam availability monitor with manual booking handoff",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2", "playwright": "^1.52.0" }
+}

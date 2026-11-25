@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101d35">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<title>Goethe B1 Monitor</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="brandmark">G</div><div><h1>Goethe B1 Monitor</h1><p>Exam availability dashboard</p></div><span id="status" class="pill off">STOPPED</span></header>
+<main>
+<section class="hero"><div><div class="eyebrow">LIVE EXAM TRACKER</div><h2>Find an available exam seat.</h2><p>Monitor official Goethe exam listings and get an alert when a matching row opens.</p></div><div class="hero-icon">◎</div></section>
+<section class="panel">
+  <div class="section-title"><h3>Monitor settings</h3><span class="muted">Minimum interval: 30 sec</span></div>
+  <div class="grid">
+    <label>Country<select id="country"></select></label>
+    <label>City filter<input id="city" value="Lahore" placeholder="e.g. Lahore or any"></label>
+    <label>Check interval<select id="interval"><option value="30">30 seconds</option><option value="60">1 minute</option><option value="120">2 minutes</option><option value="300">5 minutes</option><option value="600">10 minutes</option></select></label>
+    <label>Scan mode<select id="mode"><option value="single">Selected country</option><option value="sweep">All supported countries</option></select></label>
+  </div>
+  <div class="actions"><button id="start" class="primary">▶ Start monitoring</button><button id="stop" class="secondary">■ Stop</button><button id="check" class="outline">Check now</button></div>
+  <p class="hint">All-country sweep takes longer because countries are checked one after another.</p>
+</section>
+<section class="stats">
+  <div class="stat"><span>Matching rows</span><strong id="total">0</strong></div>
+  <div class="stat"><span>Open seats</span><strong id="opens" class="green">0</strong></div>
+  <div class="stat"><span>Last checked</span><strong id="last" class="small">—</strong></div>
+</section>
+<section class="panel">
+ <div class="section-title"><h3>Exam availability</h3><div class="head-actions"><button id="install" class="tiny hidden">Install app</button><button id="notify" class="tiny">Enable alerts</button></div></div>
+ <div id="error" class="error hidden"></div>
+ <div id="rows" class="rows"><div class="empty">No results yet. Start monitoring or tap Check now.</div></div>
+</section>
+<section class="panel">
+ <div class="section-title"><h3>Activity log</h3><button id="clear" class="tiny">Clear view</button></div>
+ <div id="logs" class="logs"><div class="muted">No activity yet.</div></div>
+</section>
+<footer>Availability monitor only · Booking is completed manually on the official Goethe website.</footer>
+</main>
+<script src="/app.js"></script>
+</body></html>
